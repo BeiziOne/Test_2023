@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.ScjzFxMapper">
+    
+    <resultMap type="ScjzFx" id="ScjzFxResult">
+        <result property="ID"    column="ID"    />
+        <result property="FXBM"    column="FXBM"    />
+        <result property="XT"    column="XT"    />
+        <result property="LBBM"    column="LBBM"    />
+        <result property="LBMC"    column="LBMC"    />
+        <result property="XM"    column="XM"    />
+        <result property="XD"    column="XD"    />
+        <result property="DJ"    column="DJ"    />
+        <result property="ZT"    column="ZT"    />
+        <result property="CZRDWBM"    column="CZRDWBM"    />
+        <result property="CZRDWMC"    column="CZRDWMC"    />
+        <result property="CZRBM"    column="CZRBM"    />
+        <result property="CZRXM"    column="CZRXM"    />
+        <result property="CZSJ"    column="CZSJ"    />
+        <result property="SHRDWBM"    column="SHRDWBM"    />
+        <result property="SHRDWMC"    column="SHRDWMC"    />
+        <result property="SHRBM"    column="SHRBM"    />
+        <result property="SHRXM"    column="SHRXM"    />
+        <result property="SHSJ"    column="SHSJ"    />
+        <result property="XTMC"    column="XTMC"    />
+        <result property="DJMC"    column="DJMC"    />
+        <result property="WHCDMC"    column="WHCDMC"    />
+        <result property="JB"    column="JB"    />
+        <result property="SFYH"    column="SFYH"    />
+    </resultMap>
+
+    <sql id="selectScjzFxVo">
+        select ID, FXBM, XT, LBBM, LBMC, XM, XD, DJ, ZT, CZRDWBM, CZRDWMC, CZRBM, CZRXM, CZSJ, SHRDWBM, SHRDWMC, SHRBM, SHRXM, SHSJ, XTMC, DJMC, WHCDMC, JB, SFYH from SCJZ_FX
+    </sql>
+
+    <select id="selectScjzFxList" parameterType="ScjzFx" resultMap="ScjzFxResult">
+        <include refid="selectScjzFxVo"/>
+        <where>  
+            <if test="FXBM != null  and FXBM != ''"> and FXBM = #{FXBM}</if>
+            <if test="XT != null "> and XT = #{XT}</if>
+            <if test="LBBM != null  and LBBM != ''"> and LBBM = #{LBBM}</if>
+            <if test="LBMC != null  and LBMC != ''"> and LBMC = #{LBMC}</if>
+            <if test="XM != null  and XM != ''"> and XM = #{XM}</if>
+            <if test="XD != null  and XD != ''"> and XD = #{XD}</if>
+            <if test="DJ != null  and DJ != ''"> and DJ = #{DJ}</if>
+            <if test="ZT != null  and ZT != ''"> and ZT = #{ZT}</if>
+            <if test="CZRDWBM != null  and CZRDWBM != ''"> and CZRDWBM = #{CZRDWBM}</if>
+            <if test="CZRDWMC != null  and CZRDWMC != ''"> and CZRDWMC = #{CZRDWMC}</if>
+            <if test="CZRBM != null  and CZRBM != ''"> and CZRBM = #{CZRBM}</if>
+            <if test="CZRXM != null  and CZRXM != ''"> and CZRXM = #{CZRXM}</if>
+            <if test="CZSJ != null "> and CZSJ = #{CZSJ}</if>
+            <if test="SHRDWBM != null  and SHRDWBM != ''"> and SHRDWBM = #{SHRDWBM}</if>
+            <if test="SHRDWMC != null  and SHRDWMC != ''"> and SHRDWMC = #{SHRDWMC}</if>
+            <if test="SHRBM != null  and SHRBM != ''"> and SHRBM = #{SHRBM}</if>
+            <if test="SHRXM != null  and SHRXM != ''"> and SHRXM = #{SHRXM}</if>
+            <if test="SHSJ != null "> and SHSJ = #{SHSJ}</if>
+            <if test="XTMC != null  and XTMC != ''"> and XTMC = #{XTMC}</if>
+            <if test="DJMC != null  and DJMC != ''"> and DJMC = #{DJMC}</if>
+            <if test="WHCDMC != null  and WHCDMC != ''"> and WHCDMC = #{WHCDMC}</if>
+            <if test="JB != null  and JB != ''"> and JB = #{JB}</if>
+            <if test="SFYH != null  and SFYH != ''"> and SFYH = #{SFYH}</if>
+        </where>
+    </select>
+    
+    <select id="selectScjzFxByID" parameterType="String" resultMap="ScjzFxResult">
+        <include refid="selectScjzFxVo"/>
+        where ID = #{ID}
+    </select>
+        
+    <insert id="insertScjzFx" parameterType="ScjzFx">
+        insert into SCJZ_FX
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="ID != null">ID,</if>
+            <if test="FXBM != null and FXBM != ''">FXBM,</if>
+            <if test="XT != null">XT,</if>
+            <if test="LBBM != null and LBBM != ''">LBBM,</if>
+            <if test="LBMC != null">LBMC,</if>
+            <if test="XM != null and XM != ''">XM,</if>
+            <if test="XD != null and XD != ''">XD,</if>
+            <if test="DJ != null">DJ,</if>
+            <if test="ZT != null">ZT,</if>
+            <if test="CZRDWBM != null">CZRDWBM,</if>
+            <if test="CZRDWMC != null">CZRDWMC,</if>
+            <if test="CZRBM != null">CZRBM,</if>
+            <if test="CZRXM != null">CZRXM,</if>
+            <if test="CZSJ != null">CZSJ,</if>
+            <if test="SHRDWBM != null">SHRDWBM,</if>
+            <if test="SHRDWMC != null">SHRDWMC,</if>
+            <if test="SHRBM != null">SHRBM,</if>
+            <if test="SHRXM != null">SHRXM,</if>
+            <if test="SHSJ != null">SHSJ,</if>
+            <if test="XTMC != null">XTMC,</if>
+            <if test="DJMC != null">DJMC,</if>
+            <if test="WHCDMC != null">WHCDMC,</if>
+            <if test="JB != null">JB,</if>
+            <if test="SFYH != null">SFYH,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="ID != null">#{ID},</if>
+            <if test="FXBM != null and FXBM != ''">#{FXBM},</if>
+            <if test="XT != null">#{XT},</if>
+            <if test="LBBM != null and LBBM != ''">#{LBBM},</if>
+            <if test="LBMC != null">#{LBMC},</if>
+            <if test="XM != null and XM != ''">#{XM},</if>
+            <if test="XD != null and XD != ''">#{XD},</if>
+            <if test="DJ != null">#{DJ},</if>
+            <if test="ZT != null">#{ZT},</if>
+            <if test="CZRDWBM != null">#{CZRDWBM},</if>
+            <if test="CZRDWMC != null">#{CZRDWMC},</if>
+            <if test="CZRBM != null">#{CZRBM},</if>
+            <if test="CZRXM != null">#{CZRXM},</if>
+            <if test="CZSJ != null">#{CZSJ},</if>
+            <if test="SHRDWBM != null">#{SHRDWBM},</if>
+            <if test="SHRDWMC != null">#{SHRDWMC},</if>
+            <if test="SHRBM != null">#{SHRBM},</if>
+            <if test="SHRXM != null">#{SHRXM},</if>
+            <if test="SHSJ != null">#{SHSJ},</if>
+            <if test="XTMC != null">#{XTMC},</if>
+            <if test="DJMC != null">#{DJMC},</if>
+            <if test="WHCDMC != null">#{WHCDMC},</if>
+            <if test="JB != null">#{JB},</if>
+            <if test="SFYH != null">#{SFYH},</if>
+         </trim>
+    </insert>
+
+    <update id="updateScjzFx" parameterType="ScjzFx">
+        update SCJZ_FX
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="FXBM != null and FXBM != ''">FXBM = #{FXBM},</if>
+            <if test="XT != null">XT = #{XT},</if>
+            <if test="LBBM != null and LBBM != ''">LBBM = #{LBBM},</if>
+            <if test="LBMC != null">LBMC = #{LBMC},</if>
+            <if test="XM != null and XM != ''">XM = #{XM},</if>
+            <if test="XD != null and XD != ''">XD = #{XD},</if>
+            <if test="DJ != null">DJ = #{DJ},</if>
+            <if test="ZT != null">ZT = #{ZT},</if>
+            <if test="CZRDWBM != null">CZRDWBM = #{CZRDWBM},</if>
+            <if test="CZRDWMC != null">CZRDWMC = #{CZRDWMC},</if>
+            <if test="CZRBM != null">CZRBM = #{CZRBM},</if>
+            <if test="CZRXM != null">CZRXM = #{CZRXM},</if>
+            <if test="CZSJ != null">CZSJ = #{CZSJ},</if>
+            <if test="SHRDWBM != null">SHRDWBM = #{SHRDWBM},</if>
+            <if test="SHRDWMC != null">SHRDWMC = #{SHRDWMC},</if>
+            <if test="SHRBM != null">SHRBM = #{SHRBM},</if>
+            <if test="SHRXM != null">SHRXM = #{SHRXM},</if>
+            <if test="SHSJ != null">SHSJ = #{SHSJ},</if>
+            <if test="XTMC != null">XTMC = #{XTMC},</if>
+            <if test="DJMC != null">DJMC = #{DJMC},</if>
+            <if test="WHCDMC != null">WHCDMC = #{WHCDMC},</if>
+            <if test="JB != null">JB = #{JB},</if>
+            <if test="SFYH != null">SFYH = #{SFYH},</if>
+        </trim>
+        where ID = #{ID}
+    </update>
+
+    <delete id="deleteScjzFxByID" parameterType="String">
+        delete from SCJZ_FX where ID = #{ID}
+    </delete>
+
+    <delete id="deleteScjzFxByIDs" parameterType="String">
+        delete from SCJZ_FX where ID in 
+        <foreach item="ID" collection="array" open="(" separator="," close=")">
+            #{ID}
+        </foreach>
+    </delete>
+</mapper>

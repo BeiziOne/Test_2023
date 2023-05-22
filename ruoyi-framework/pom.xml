@@ -59,6 +59,12 @@
             <artifactId>ruoyi-system</artifactId>
         </dependency>
 
+        <!-- 风险项点基础操作-->
+        <dependency>
+            <groupId>com.ruoyi</groupId>
+            <artifactId>ruoyi-fx</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>

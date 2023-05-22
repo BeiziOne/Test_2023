@@ -170,6 +170,13 @@
                 <version>${ruoyi.version}</version>
             </dependency>
 
+            <!-- 风险项点-->
+            <dependency>
+            <groupId>com.ruoyi</groupId>
+            <artifactId>ruoyi-fx</artifactId>
+            <version>${ruoyi.version}</version>
+        </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -180,6 +187,9 @@
         <module>ruoyi-quartz</module>
         <module>ruoyi-generator</module>
         <module>ruoyi-common</module>
+        <module>ruoyi-fx</module>
+
+
     </modules>
     <packaging>pom</packaging>
 
